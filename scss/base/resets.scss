@@ -1,3 +1,5 @@
+@use "../utils" as u;
+
 *,
 * *::before,
 *::after {
@@ -5,5 +7,5 @@
 }
 
 body {
-  background: #272727;
-}/*# sourceMappingURL=style.css.map */
+  background: u.$primary-color;
+}
