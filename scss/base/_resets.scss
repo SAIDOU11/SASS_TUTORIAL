@@ -16,5 +16,10 @@ body {
 .main {
   margin: 0 auto;
   width: 70%;
-  font-weight: 700;
+  #{&}__paragraph {
+    font-weight: map-get(u.$font-weights, bold);
+    &:hover {
+      color: #da8996;
+    }
+  }
 }
