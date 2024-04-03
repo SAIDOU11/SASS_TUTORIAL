@@ -12,12 +12,15 @@ body {
 }
 
 .main {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 70%;
+  margin: 0 auto;
 }
 .main .main__paragraph {
   font-weight: 700;
 }
 .main .main__paragraph:hover {
-  color: #da8996;
+  color: #ff0000;
 }/*# sourceMappingURL=style.css.map */
