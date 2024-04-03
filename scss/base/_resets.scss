@@ -21,11 +21,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 
   #{&}__paragraph {
     font-weight: weight(bold);
+
     &:hover {
       color: #ff0000;
     }
