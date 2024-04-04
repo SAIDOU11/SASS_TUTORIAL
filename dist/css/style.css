@@ -7,8 +7,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: skyblue;
-  color: #2b2a2a;
+  background: #1b1a1a;
+  color: #fff;
 }
 
 .main {
@@ -24,4 +24,9 @@ body {
 }
 .main .main__paragraph:hover {
   color: #ff0000;
+}
+
+.light {
+  background: white;
+  color: black;
 }/*# sourceMappingURL=style.css.map */
