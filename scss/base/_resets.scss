@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+@function weight($weight-name) {
+  @return map-get(u.$font-weights, $weight-name);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -21,7 +25,7 @@ body {
   margin: 0 auto;
 
   #{&}__paragraph {
-    font-weight: 700;
+    font-weight: weight(regular);
 
     &:hover {
       color: #ff0000;
