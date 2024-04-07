@@ -6,8 +6,22 @@
   box-sizing: border-box;
 }
 
-@function weight($weight-name) {
-  @return map-get(u.$font-weights, $weight-name);
+@function weight($font-name) {
+  @return map-get(u.$font-weights, $font-name);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+  @if ($light-theme) {
+    background: lighten(u.$primary-color, 100%);
+    color: darken(u.$text-color, 100%);
+  }
 }
 
 body {
@@ -18,17 +32,18 @@ body {
 }
 
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 80%;
   margin: 0 auto;
-
+  @include flexCenter(row);
   #{&}__paragraph {
-    font-weight: weight(regular);
+    font-weight: weight(bold);
 
     &:hover {
       color: #ff0000;
     }
   }
+}
+
+.light {
+  @include theme($light-theme: true);
 }
