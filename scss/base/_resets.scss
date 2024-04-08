@@ -24,6 +24,12 @@
   }
 }
 
+@mixin mobile {
+  @media (max-width: u.$mobile) {
+    @content;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -32,15 +38,19 @@ body {
 }
 
 .main {
+  @include flexCenter(row);
   width: 80%;
   margin: 0 auto;
-  @include flexCenter(row);
+
   #{&}__paragraph {
     font-weight: weight(bold);
 
     &:hover {
       color: #ff0000;
     }
+  }
+  @include mobile {
+    flex-direction: column;
   }
 }
 
