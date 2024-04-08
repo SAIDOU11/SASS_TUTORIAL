@@ -10,26 +10,6 @@
   @return map-get(u.$font-weights, $font-name);
 }
 
-@mixin flexCenter($direction) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
-
-@mixin theme($light-theme: true) {
-  @if ($light-theme) {
-    background: lighten(u.$primary-color, 100%);
-    color: darken(u.$text-color, 100%);
-  }
-}
-
-@mixin mobile {
-  @media (max-width: u.$mobile) {
-    @content;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -38,7 +18,10 @@ body {
 }
 
 .main {
-  @include flexCenter(row);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 80%;
   margin: 0 auto;
 
@@ -49,11 +32,6 @@ body {
       color: #ff0000;
     }
   }
-  @include mobile {
-    flex-direction: column;
-  }
 }
 
-.light {
-  @include theme($light-theme: true);
-}
+// .light{}
