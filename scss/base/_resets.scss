@@ -6,24 +6,6 @@
   box-sizing: border-box;
 }
 
-@function weight($font-name) {
-  @return map-get(u.$font-weights, $font-name);
-}
-
-@mixin flexCenter($direction) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
-
-@mixin theme($light-theme: true) {
-  @if $light-theme {
-    background: lighten(u.$primary-color, 100%);
-    color: darken(u.$text-color, 100%);
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -32,19 +14,18 @@ body {
 }
 
 .main {
-  @include flexCenter(row);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 80%;
   margin: 0 auto;
 
   #{&}__paragraph {
-    font-weight: weight(regular);
+    font-weight: 400;
 
     &:hover {
       color: #ff0000;
     }
   }
-}
-
-.light {
-  @include theme($light-theme: false);
 }
