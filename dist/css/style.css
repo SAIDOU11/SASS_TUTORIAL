@@ -19,7 +19,7 @@ body {
   margin: 0 auto;
 }
 .main .main__paragraph {
-  font-weight: 400;
+  font-weight: 500;
 }
 .main .main__paragraph:hover {
   color: #ff0000;
