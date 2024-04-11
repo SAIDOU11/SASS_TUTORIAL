@@ -1,5 +1,23 @@
 @use "../utils" as u;
 
+@function weight($weight-size) {
+  @return map-get(u.$font-weights, $weight-size);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background: lighten(u.$primary-color, 100%);
+    color: darken(u.$text-color, 100%);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -14,18 +32,19 @@ body {
 }
 
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  @include flexCenter(column);
   width: 80%;
   margin: 0 auto;
 
   #{&}__paragraph {
-    font-weight: 500;
+    font-weight: weight(regular);
 
     &:hover {
       color: #ff0000;
     }
   }
+}
+
+.light {
+  @include theme($light-theme: true);
 }
