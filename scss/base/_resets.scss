@@ -18,9 +18,15 @@
   }
 }
 
+@mixin mobile {
+  @media (max-width: u.$mobile) {
+    @content;
+  }
+}
+
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -31,8 +37,12 @@ body {
   color: u.$text-color;
 }
 
+h1 {
+  text-align: center;
+}
+
 .main {
-  @include flexCenter(column);
+  @include flexCenter(row);
   width: 80%;
   margin: 0 auto;
 
@@ -42,6 +52,9 @@ body {
     &:hover {
       color: #ff0000;
     }
+  }
+  @include mobile {
+    flex-direction: column;
   }
 }
 
