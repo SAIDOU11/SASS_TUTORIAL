@@ -25,6 +25,7 @@ h1 {
 }
 .main .main__paragraph {
   font-weight: 400;
+  padding: 0 1.5em;
 }
 .main .main__paragraph:hover {
   color: #ff0000;
