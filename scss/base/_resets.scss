@@ -13,7 +13,7 @@
 
 @mixin theme($light-theme: true) {
   @if $light-theme {
-    background: lighten(u.$primary-color, 100%);
+    background: lighten(u.$primary-color, 50%);
     color: darken(u.$text-color, 100%);
   }
 }
